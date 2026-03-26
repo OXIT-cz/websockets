@@ -54,6 +54,11 @@ class ServerCommand extends Console\Command\Command
 			->setDescription('Start WebSocket server.');
 	}
 
+	public static function getDefaultName(): string
+	{
+		return 'ipub:websockets:start';
+	}
+
 	/**
 	 * {@inheritdoc}
 	 */
