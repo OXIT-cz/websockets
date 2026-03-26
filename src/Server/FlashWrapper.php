@@ -187,7 +187,7 @@ final class FlashWrapper implements IWrapper
 	 */
 	private function validateDomain(string $domain): bool
 	{
-		return (bool) preg_match('/^((http(s)?:\/\/)?([a-z0-9-_]+\.|\*\.)*([a-z0-9-_\.]+)|\*)$/i', $domain);
+		return (bool) preg_match("/^(((https?|wss?):\/\/)?(\*\.)?([a-z0-9-]+\.)+[a-z]{2,})(\/[a-z0-9\-._~%!$&'()*+,;=:@\/]*)?$|^\*$/i", $domain);
 	}
 
 	/**
