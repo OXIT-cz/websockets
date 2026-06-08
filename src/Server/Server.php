@@ -110,7 +110,7 @@ final class Server
 			$this->logger->error('Could not establish connection: ' . $ex->getMessage());
 		});
 
-		$flashPort = 8843;
+		$flashPort = $this->configuration->getFlashPort();
 
 		if ($this->configuration->getPort() === 80) {
 			$flashPort = 843;
