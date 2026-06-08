@@ -23,6 +23,9 @@ final class Configuration
 	/** @var int */
 	private $port;
 
+	/** @var int */
+	private $flashPort;
+
 	/** @var string */
 	private $address;
 
@@ -40,11 +43,13 @@ final class Configuration
 	 */
 	public function __construct(
 		int $port = 8080,
+		int $flashPort = 8843,
 		string $address = '0.0.0.0',
 		bool $enableSSL = false,
 		array $sslSettings = []
 	) {
 		$this->port = $port;
+		$this->flashPort = $flashPort;
 		$this->address = $address;
 		$this->enableSSL = $enableSSL;
 		$this->sslSettings = $sslSettings;
@@ -66,6 +71,16 @@ final class Configuration
 	public function getPort(): int
 	{
 		return $this->port;
+	}
+
+	public function setFlashPort(int $flashPort): void
+	{
+		$this->flashPort = $flashPort;
+	}
+
+	public function getFlashPort(): int
+	{
+		return $this->flashPort;
 	}
 
 	/**

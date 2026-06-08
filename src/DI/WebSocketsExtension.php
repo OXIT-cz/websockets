@@ -49,6 +49,7 @@ final class WebSocketsExtension extends DI\CompilerExtension
 			'server'  => Schema\Expect::structure([
 				'httpHost' => Schema\Expect::string('localhost'),
 				'port'     => Schema\Expect::int(8080),
+				'flashPort'	=> Schema\Expect::int(8843),
 				'address'  => Schema\Expect::string('0.0.0.0'),
 				'secured'  => Schema\Expect::structure([
 					'enable'      => Schema\Expect::bool(false),
@@ -164,6 +165,7 @@ final class WebSocketsExtension extends DI\CompilerExtension
 			->setType(Server\Configuration::class)
 			->setArguments([
 				'port'        => $configuration->server->port,
+				'flashPort'   => $configuration->server->flashPort,
 				'address'     => $configuration->server->address,
 				'enableSSL'   => $configuration->server->secured->enable,
 				'sslSettings' => $configuration->server->secured->sslSettings,
